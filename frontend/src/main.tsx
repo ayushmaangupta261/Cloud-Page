@@ -14,7 +14,7 @@ const rootElement = document.getElementById('root')!;
 const root = createRoot(rootElement);
 
 root.render(
-  <BrowserRouter >
+  <BrowserRouter basename='https://ayushmaangupta261.github.io/Cloud-Page/'>
     <Provider store={store}>
     
         <App />

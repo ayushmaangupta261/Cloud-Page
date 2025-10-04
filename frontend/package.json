@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://cloud-page-backend.onrender.com",
+  "homepage": "https://ayushmaangupta261.github.io/Cloud-Page/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
