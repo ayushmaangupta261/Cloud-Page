@@ -6,11 +6,7 @@ import noteRoutes from "./routes/noteRoute";
 const app = express();
 
 // Allowed origins
-const allowedOrigins = [
-  "https://ayushmaangupta261.github.io", 
-  "https://ayushmaangupta261.github.io/Highway-Delight-Assignment", 
-  "http://localhost:3000"
-];
+const allowedOrigins = process.env.CORS_URL
 
 // Enable CORS
 app.use(
