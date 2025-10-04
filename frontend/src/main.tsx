@@ -5,9 +5,9 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
-import { GoogleOAuthProvider } from "@react-oauth/google";
 
-const clientId = import.meta.env.VITE_APP_GOOGLE_CLIENT_ID!;
+
+
 
 // Only the subpath for GitHub Pages
 const basename = '/Cloud-Page/';
@@ -18,9 +18,9 @@ const root = createRoot(rootElement);
 root.render(
   <BrowserRouter basename={basename}>
     <Provider store={store}>
-      <GoogleOAuthProvider clientId={clientId}>
+    
         <App />
-      </GoogleOAuthProvider>
+      
     </Provider>
   </BrowserRouter>
 );
