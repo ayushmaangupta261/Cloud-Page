@@ -256,7 +256,7 @@ const Dashboard = () => {
               placeholder="Content"
               value={newNote.content}
               onChange={e => setNewNote(prev => ({ ...prev, content: e.target.value }))}
-              className="w-full border p-2 rounded mb-2 h-32"
+              className="w-full border p-2 rounded mb-2 h-45"
               disabled={!isEditingAllowed}
             />
             <div className="flex gap-x-4 justify-center lg:justify-end items-center mt-2">
