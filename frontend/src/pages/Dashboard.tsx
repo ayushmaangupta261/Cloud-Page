@@ -168,7 +168,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="w-[80%] mx-auto flex flex-col gap-y-3 px-4 py-2 mt-[4rem]">
+    <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-y-3 px-4 py-2 mt-[4rem]">
       {/* Welcome */}
       <div className="relative mt-6">
         <div className="absolute inset-0 bg-gray-400/50 rounded-lg blur-lg"></div>
@@ -242,7 +242,7 @@ const Dashboard = () => {
       {/* Create/Edit/View Note Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50 ">
-          <div className="bg-white p-4 rounded h-[60%] lg:h-[60%]  w-[90%] lg:w-[60%] shadow-lg ">
+          <div className="bg-white p-4 rounded  shadow-lg ">
 
             <input
               type="text"
@@ -256,7 +256,7 @@ const Dashboard = () => {
               placeholder="Content"
               value={newNote.content}
               onChange={e => setNewNote(prev => ({ ...prev, content: e.target.value }))}
-              className="w-full border p-2 rounded mb-2 h-45"
+              className="w-full border p-2 rounded mb-2 h-32"
               disabled={!isEditingAllowed}
             />
             <div className="flex gap-x-4 justify-center lg:justify-end items-center mt-2">
