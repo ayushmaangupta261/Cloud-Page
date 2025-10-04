@@ -6,15 +6,15 @@ import noteRoutes from "./routes/noteRoute";
 const app = express();
 
 // Allowed origins
-const allowedOrigins = process.env.CORS_URL
+const allowedOrigin = process.env.CORS_URL; // single origin
 
-// Enable CORS
 app.use(
   cors({
     origin: function (origin, callback) {
       // allow requests with no origin (like mobile apps or curl)
       if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) {
+
+      if (origin === allowedOrigin) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
@@ -25,6 +25,7 @@ app.use(
     credentials: true, // allow cookies
   })
 );
+
 
 // Parse JSON requests
 app.use(express.json());
