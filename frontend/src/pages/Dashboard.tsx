@@ -168,7 +168,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-y-3 px-4 py-2 mt-[4rem]">
+    <div className="w-[95%] lg:w-[80%] mx-auto flex flex-col gap-y-3 px-4 py-2 mt-[4rem]">
       {/* Welcome */}
       <div className="relative mt-6">
         <div className="absolute inset-0 bg-gray-400/50 rounded-lg blur-lg"></div>
@@ -242,7 +242,7 @@ const Dashboard = () => {
       {/* Create/Edit/View Note Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50 ">
-          <div className="bg-white p-4 rounded  shadow-lg ">
+          <div className="bg-white p-4 rounded w-[80%] shadow-lg ">
 
             <input
               type="text"
