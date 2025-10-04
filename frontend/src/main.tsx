@@ -1,26 +1,18 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom'; // <-- HashRouter import
 import "./index.css"
 import App from './App';
 import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
 
-
-
-
-// Only the subpath for GitHub Pages
-const basename = '/Cloud-Page/';
-
 const rootElement = document.getElementById('root')!;
 const root = createRoot(rootElement);
 
 root.render(
-  <BrowserRouter basename={basename}>
+  <HashRouter>
     <Provider store={store}>
-    
-        <App />
-      
+      <App />
     </Provider>
-  </BrowserRouter>
+  </HashRouter>
 );
