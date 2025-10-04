@@ -1,8 +1,7 @@
 import { Request, Response } from "express";
 import Note, { INote } from "../models/Note";
 import User, { IUser } from "../models/User"; // assuming you have a User model
-import { sendEmail } from "../utils/sendEmail";
-import { noteSharedTemplate } from "../constant/noteSharedTemplate";
+
 
 interface AuthRequest extends Request {
   user?: IUser;
@@ -183,16 +182,7 @@ export const shareNote = async (req: AuthRequest, res: Response) => {
       }
     }
 
-    // Send emails (skip errors)
-    try {
-      const mail = noteSharedTemplate(note.user.name, note.title);
-      const subject = "A note is shared with you";
-      for (const email of foundEmails) {
-        await sendEmail(email, subject, mail);
-      }
-    } catch (emailErr) {
-      console.error("Error sending emails:", emailErr);
-    }
+   
 
     // Return note with user names and emails shared with
     const sharedWithUsers = await User.find({ _id: { $in: note.sharedWith } }).select("name email");
@@ -239,7 +229,7 @@ export const editNote = async (req: AuthRequest, res: Response) => {
 
 
 
-// PUT /notes/:id/remove-user
+
 export const removeSharedUser = async (req: AuthRequest, res: Response) => {
   try {
     const noteId = req.params.id;
