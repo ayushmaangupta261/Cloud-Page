@@ -13,7 +13,7 @@ const allowedOrigin = process.env.CORS_URL; // single origin
 
 console.log("allowed origin -> ", allowedOrigin);
 
-
+ 
 app.use(
   cors({
     origin: function (origin, callback) {
