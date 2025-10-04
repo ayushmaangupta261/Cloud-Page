@@ -243,7 +243,8 @@ const Dashboard = () => {
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50 ">
           <div className="bg-white p-4 rounded w-[80%] shadow-lg ">
-
+ 
+ 
             <input
               type="text"
               placeholder="Title"
