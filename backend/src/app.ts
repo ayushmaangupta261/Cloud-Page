@@ -2,25 +2,23 @@ import express from "express";
 import cors from "cors";
 import authRoutes from "./routes/authRoute";
 import noteRoutes from "./routes/noteRoute";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const app = express();
 
 // Allowed origins
-const allowedOrigin = process.env.CORS_URL; // single origin
+const allowedOrigins = [
+  "https://ayushmaangupta261.github.io", 
+  "https://ayushmaangupta261.github.io/Cloud-Page/", 
+  "http://localhost:3000"
+];
 
-console.log("allowed origin -> ", allowedOrigin);
-
- 
+// Enable CORS
 app.use(
   cors({
     origin: function (origin, callback) {
       // allow requests with no origin (like mobile apps or curl)
       if (!origin) return callback(null, true);
-
-      if (origin === allowedOrigin) {
+      if (allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
@@ -31,7 +29,6 @@ app.use(
     credentials: true, // allow cookies
   })
 );
-
 
 // Parse JSON requests
 app.use(express.json());
