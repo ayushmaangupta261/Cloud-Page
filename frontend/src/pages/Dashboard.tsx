@@ -242,7 +242,7 @@ const Dashboard = () => {
       {/* Create/Edit/View Note Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50 ">
-          <div className="bg-white p-4 rounded h-[60%] lg:h-[60%.] w-[90%] lg:w-[60%] shadow-lg ">
+          <div className="bg-white p-4 rounded h-[60%] lg:h-[60%] w-[90%] lg:w-[60%] shadow-lg ">
 
             <input
               type="text"
