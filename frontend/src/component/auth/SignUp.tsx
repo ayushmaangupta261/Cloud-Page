@@ -44,10 +44,10 @@ const SignUp: React.FC = () => {
 
             dispatch(setCredentials({ token: response.token, user: response.user }));
             navigate("/dashboard");
-            toast.success("Signup successful!");
+        
         } catch (error: any) {
             console.error(error.message || "Signup failed");
-            toast.error(error.message || "Signup failed");
+           
         }
     };
 

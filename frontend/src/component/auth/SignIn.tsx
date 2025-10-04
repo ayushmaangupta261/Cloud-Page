@@ -40,10 +40,10 @@ const SignIn: React.FC = () => {
 
       dispatch(setCredentials({ token: response.token, user: response.user }));
       navigate("/dashboard");
-      toast.success("Login successful!");
+   
     } catch (error: any) {
       console.error(error.message || "Login failed");
-      toast.error(error.message || "Login failed");
+     
     }
   };
 
