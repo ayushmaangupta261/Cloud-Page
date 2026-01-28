@@ -22,6 +22,8 @@ const genAi = async (message: string) => {
 
     try {
         const result = await model.generateContent(message);
+        console.log("Result -> ", result);
+        
         return result.response.text();
     } catch (error) {
         console.error("AI Error ->", error);
